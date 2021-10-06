@@ -54,6 +54,12 @@ Object.grabKeys = function() {
 };
 
 // VALUES //
-Object.grabValues = function() {
-
+Object.grabValues = function(object) {
+  let value = [];
+  for(key in object) {
+      if(object.hasOwnProperty(key)) {
+          value[value.length] = object[key];
+      }
+  }
+  return value;
 };
