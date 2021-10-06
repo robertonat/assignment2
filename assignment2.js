@@ -49,8 +49,12 @@ Array.prototype.myLastIndexOf = function() {
 };
 
 // KEYS //
-Object.grabKeys = function() {
-
+Object.grabKeys = function(object) {
+    let keys = [];
+    for(key in object) {
+      keys[keys.length] = key;
+    }
+    return keys;
 };
 
 // VALUES //
