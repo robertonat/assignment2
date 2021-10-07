@@ -27,8 +27,14 @@ Array.prototype.myFilter = function() {
 
 // SOME //
 Array.prototype.mySome = function() {
-
+  for(let i =0; i< this.length; i++){
+    if(callbackfunc(this[i])){
+        return true;
+      }
+    }
+    return false;
 };
+
 
 // EVERY //
 Array.prototype.myEvery = function() {
