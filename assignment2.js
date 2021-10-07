@@ -47,7 +47,24 @@ Array.prototype.myEvery = function(callbackfunc) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function() {
+Array.prototype.myReduce = function(callbackfunc) {
+  //initlize previous variable with the first item in the array
+  let previous = this[0];
+
+  //if an initial value is given in the arguments go through this for loop.
+  if(arguments.length > 1){
+    previous = arguments[1];
+    for(let i = 0; i< this.length; i++){
+      previous = callbackfunc(previous, this[i]);
+    }
+    return previous;
+  }
+
+  //for loop for if no initial value was given and the first value of array is used
+  for(let i = 1; i< this.length; i++){
+    previous = callbackfunc(previous, this[i]);
+  }
+  return previous;
 
 };
 
