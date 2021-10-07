@@ -6,7 +6,7 @@ Array.prototype.myEach = function(callbackfunc) {
 };
 
 // MAP //
-Array.prototype.myMap = function() {
+Array.prototype.myMap = function(callbackfunc) {
   let newArr=[];
   for(let i =0; i< this.length; i++){
      newArr.push(callbackfunc(this[i]));
@@ -15,7 +15,7 @@ Array.prototype.myMap = function() {
   };
 
 // FILTER //
-Array.prototype.myFilter = function() {
+Array.prototype.myFilter = function(callbackfunc) {
   let newArr = [];
   for(let i =0; i< this.length; i++){
     if(callbackfunc(this[i])){
@@ -26,7 +26,7 @@ Array.prototype.myFilter = function() {
 };
 
 // SOME //
-Array.prototype.mySome = function() {
+Array.prototype.mySome = function(callbackfunc) {
   for(let i =0; i< this.length; i++){
     if(callbackfunc(this[i])){
         return true;
@@ -80,7 +80,7 @@ Array.prototype.myIncludes = function(element) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function() {
-  for(let i = index; i<this.length; i++){
+  for(let i = 0; i<this.length; i++){
       if(this[i] == arguments[0]){
         return i;
       }
@@ -89,12 +89,19 @@ Array.prototype.myIndexOf = function() {
 };
 // PUSH //
 Array.prototype.myPush = function() {
-
+    for(let i = 0; i<arguments.length; i++){
+        this[this.length] = arguments[i];
+    }
+  return this.length;
 };
-
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function() {
-
+  for(let i = this.length-1; i>-1; i--){
+      if(this[i] === arguments[0]){
+        return i;
+      }
+    }
+      return -1;
 };
 
 // KEYS //
