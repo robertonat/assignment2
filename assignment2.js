@@ -80,9 +80,13 @@ Array.prototype.myIncludes = function(element) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function() {
-
+  for(let i = index; i<this.length; i++){
+      if(this[i] == arguments[0]){
+        return i;
+      }
+    }
+      return -1;
 };
-
 // PUSH //
 Array.prototype.myPush = function() {
 
