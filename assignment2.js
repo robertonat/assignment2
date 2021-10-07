@@ -1,6 +1,8 @@
 // FOR EACH //
-Array.prototype.myEach = function() {
-
+Array.prototype.myEach = function(callbackfunc) {
+  for(let i =0; i< this.length; i++){
+     callbackfunc(this[i]);
+  }
 };
 
 // MAP //
