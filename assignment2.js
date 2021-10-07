@@ -7,8 +7,12 @@ Array.prototype.myEach = function(callbackfunc) {
 
 // MAP //
 Array.prototype.myMap = function() {
-
-};
+  let newArr=[];
+  for(let i =0; i< this.length; i++){
+     newArr.push(callbackfunc(this[i]));
+  }
+  return newArr;
+  };
 
 // FILTER //
 Array.prototype.myFilter = function() {
@@ -53,7 +57,7 @@ Array.prototype.myLastIndexOf = function() {
 // KEYS //
 Object.grabKeys = function(object) {
     let keys = [];
-    for(key in object) {
+    for(let key in object) {
       keys[keys.length] = key;
     }
     return keys;
@@ -62,7 +66,7 @@ Object.grabKeys = function(object) {
 // VALUES //
 Object.grabValues = function(object) {
   let value = [];
-  for(key in object) {
+  for(let key in object) {
       if(object.hasOwnProperty(key)) {
           value[value.length] = object[key];
       }
