@@ -16,7 +16,13 @@ Array.prototype.myMap = function() {
 
 // FILTER //
 Array.prototype.myFilter = function() {
-
+  let newArr = [];
+  for(let i =0; i< this.length; i++){
+    if(callbackfunc(this[i])){
+      newArr.push(this[i]);
+    }
+  }
+  return newArr;
 };
 
 // SOME //
