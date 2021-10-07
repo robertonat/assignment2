@@ -69,8 +69,13 @@ Array.prototype.myReduce = function(callbackfunc) {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
-
+Array.prototype.myIncludes = function(element) {
+  for(let i = 0; i<this.length; i++){
+      if(this[i] == element){
+        return true;
+      }
+  }
+  return false;
 };
 
 // INDEXOF //
